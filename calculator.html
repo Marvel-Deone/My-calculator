@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    .overall {
+    width: 250px;
+    height: 430px;
+    margin-top: 60px !important;
+    margin: auto;
+    background-color: black;
+    /* background-color: #354874; */
+    border: 6px solid black;
+    border-radius: 8px;
+    padding: 16px;
+} 
+#calc {
+    margin-top: 80px;
+    margin-left: 12px;
+    width: 210px;
+    border-radius: 3px;
+    padding: 20px;
+    margin: auto;
+    background-color: #8A8A8A; 
+    /* height: 70px;  */
+    border: none;
+} 
+#calc2 {
+    margin-top: -10px !important;
+    margin-left: 12px;
+    width: 210px;
+    border-radius: 3px;
+    padding: 20px;
+    margin: auto;
+    background-color: #8A8A8A; 
+    height: 20px; 
+    border: none;
+    text-align: end;
+} 
+input {
+    width: 44px;
+    /* background-color: #262626; */
+    background-color: #456C83;
+    color: white;
+    border: 3px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 15px;
+}  
+#inp:hover {
+    background-color: white;
+    color:  black;
+    font-weight: bold;
+}
+
+    
+</style>
+<body>
+    <div class="overall">
+        <h1 style="font-family: 'Times New Roman', Times, serif; color: white; font-size: 20px; margin-left: 10px;">Mavel Calculator</h1>
+        <form name="form1" action="">
+            <input id="calc" type="text" name="answer"> <br>
+            <input type="text" name="cal" id="calc2"><br><br>
+            <input id="inp" type="button" value="7" onclick="answer.value += '7'">
+            <input id="inp" type="button" value="8" onclick="answer.value += '8'" style="margin-left: -5px;">
+            <input id="inp" type="button" value="9" onclick="answer.value += '9'" style="margin-left: -5px;">
+            <input id="inp" type="button" value="Del" onclick ="backspace() "  style="margin-left: -5px;">
+            <input id="inp" type="button" value="AC" onclick ="form1.answer.value = ''; cal.value= '' "  style="background-color: #456C83; margin-left: -5px;">
+            <br><br>
+            <input id="inp" type="button" value="4" onclick="form1.answer.value +='4'">
+            <input id="inp" type="button" value="5" onclick="form1.answer.value += '5'" style="margin-left: -5px;">
+            <input id="inp" type="button" value="6" onclick="form1.answer.value += '6'" style="margin-left: -5px;">
+            <input id="inp" type="button" value="&times;" onclick="form1.answer.value +='*'" style="margin-left: -5px;">
+            <input id="inp" type="button" value="/" onclick="form1.answer.value += '/' "style="background-color: #456C83; margin-left: -5px;"> 
+            
+            <br><br>
+            <input id="inp" type="button" value="1" onclick="form1.answer.value += '1' ">
+            <input id="inp" type="button" value="2" onclick="form1.answer.value += '2' " style="margin-left: -5px;">
+            <input id="inp" type="button" value="3" onclick="form1.answer.value += '3' " style="margin-left: -5px;">
+            <input id="inp" type="button" value="+" onclick="form1.answer.value += '+' " style="margin-left: -5px;">
+            <input id="inp" type="button" value="-" onclick="form1.answer.value += '-' " style="background-color: #456C83; margin-left: -5px;"> 
+            <br><br>
+            <input id="inp" type="button" value="0" onclick="form1.answer.value += '0'">
+            <input id="inp" type="button" value="." onclick="form1.answer.value += '.'" style="margin-left: -5px;"> 
+            <input id="inp" type="button" value="(" onclick="form1.answer.value += '('" style="margin-left: -5px;">
+            <input id="inp" type="button" value=")" onclick="form1.answer.value += ')'" style="margin-left: -5px;">
+            <!-- When I click the '=' button, the onclick()show the the sum results on the calculator screen -->
+            <input id="inp" type="button" value="=" onclick="form1.cal.value = eval(form1.answer.value)" style="background-color: #79EF45; margin-left: -5px; font-size: 17px; font-weight: 600;">  
+            <br><br>
+           
+            
+           
+        </form>
+    </div>
+    <script>
+            // function backspace()
+            const backspace =()=>
+    {
+    var exp = document.form1.answer.value;
+    document.form1.answer.value = exp.substring(0, exp.length - 1); /* remove the element from total length ? 1 */
+    }
+
+    </script>
+</body>
+</html>
